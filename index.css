@@ -1,0 +1,77 @@
+.theme-light {
+    --color-primary: #E55934;    
+    --color-secondary: #0A2463;
+    --color-highlight: #FFD166;
+
+    --color-pencil:#7CA982;
+ }.theme-dark {
+    --color-primary: #17ed90;
+    --color-secondary: #243133;
+    --color-accent: #12cdea;
+    --font-color-primary: #ffffff;
+    --font-color-secondary: grey;
+}
+
+body{
+    background-color: var(--color-primary);
+}
+#gameBoard {
+
+    margin: auto;
+    padding: 10px;
+    aspect-ratio: 9/10;
+    max-height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(10,1fr);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 3vh;;
+    max-width: 90vw;
+    box-sizing: border-box;
+}
+.seg{
+    grid-row: span 3;
+    grid-column: span 3;
+    border: 0.01rem solid var(--color-secondary);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr)
+}
+.cell{
+    grid-row: span 1;
+    grid-column: span 1;
+    border: dotted 0.01rem  var(--color-secondary);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    /* font-size: 2em; */
+    overflow: auto;
+    color: var(--color-pencil)
+}
+.static{
+    color: var(--color-secondary);
+}
+#inputSelectorPanel{
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: 1fr;
+    grid-column: span 9;
+    color: var(--color-secondary);
+}
+.inputSelectorItem{
+    grid-row: span 1;
+    grid-column: span 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    /* font-size: 2em; */
+    overflow: auto;
+    /* aspect-ratio: 1/1; */
+    margin: 5%;
+    border-radius: 5%;
+    
+}

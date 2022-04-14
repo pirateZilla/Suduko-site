@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Play Suduko!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body class = theme-light>
+    <div id="gameBoard">
+        <div id="seg_1_1" class="seg">
+            <div class="cell segrow_1 segcolumn_1" data-row="1" data-column="1"></div>
+            <div class="cell segrow_1 segcolumn_2" data-row="1" data-column="2"></div>
+            <div class="cell segrow_1 segcolumn_3" data-row="1" data-column="3"></div>
+            <div class="cell segrow_2 segcolumn_1" data-row="2" data-column="1"></div>
+            <div class="cell segrow_2 segcolumn_2" data-row="2" data-column="2"></div>
+            <div class="cell segrow_2 segcolumn_3" data-row="2" data-column="3"></div>
+            <div class="cell segrow_3 segcolumn_1" data-row="3" data-column="1"></div>
+            <div class="cell segrow_3 segcolumn_2" data-row="3" data-column="2"></div>
+            <div class="cell segrow_3 segcolumn_3" data-row="3" data-column="3"></div>
+        </div>
+        <div id="seg_1_2" class="seg">
+            <div class="cell segrow_1 segcolumn_1" data-row="1" data-column="4"></div>
+            <div class="cell segrow_1 segcolumn_2" data-row="1" data-column="5"></div>
+            <div class="cell segrow_1 segcolumn_3" data-row="1" data-column="6"></div>
+            <div class="cell segrow_2 segcolumn_1" data-row="2" data-column="4"></div>
+            <div class="cell segrow_2 segcolumn_2" data-row="2" data-column="5"></div>
+            <div class="cell segrow_2 segcolumn_3" data-row="2" data-column="6"></div>
+            <div class="cell segrow_3 segcolumn_1" data-row="3" data-column="4"></div>
+            <div class="cell segrow_3 segcolumn_2" data-row="3" data-column="5"></div>
+            <div class="cell segrow_3 segcolumn_3" data-row="3" data-column="6"></div>
+        </div>
+        <div id="seg_1_3" class="seg">
+            <div class="cell segrow_1 segcolumn_1" data-row="1" data-column="7"></div>
+            <div class="cell segrow_1 segcolumn_2" data-row="1" data-column="8"></div>
+            <div class="cell segrow_1 segcolumn_3" data-row="1" data-column="9"></div>
+            <div class="cell segrow_2 segcolumn_1" data-row="2" data-column="7"></div>
+            <div class="cell segrow_2 segcolumn_2" data-row="2" data-column="8"></div>
+            <div class="cell segrow_2 segcolumn_3" data-row="2" data-column="9"></div>
+            <div class="cell segrow_3 segcolumn_1" data-row="3" data-column="7"></div>
+            <div class="cell segrow_3 segcolumn_2" data-row="3" data-column="8"></div>
+            <div class="cell segrow_3 segcolumn_3" data-row="3" data-column="9"></div>
+        </div>
+        <div id="seg_2_1" class="seg">
+            <div class="cell segrow_1 segcolumn_1" data-row="4" data-column="1"></div>
+            <div class="cell segrow_1 segcolumn_2" data-row="4" data-column="2"></div>
+            <div class="cell segrow_1 segcolumn_3" data-row="4" data-column="3"></div>
+            <div class="cell segrow_2 segcolumn_1" data-row="5" data-column="1"></div>
+            <div class="cell segrow_2 segcolumn_2" data-row="5" data-column="2"></div>
+            <div class="cell segrow_2 segcolumn_3" data-row="5" data-column="3"></div>
+            <div class="cell segrow_3 segcolumn_1" data-row="6" data-column="1"></div>
+            <div class="cell segrow_3 segcolumn_2" data-row="6" data-column="2"></div>
+            <div class="cell segrow_3 segcolumn_3" data-row="6" data-column="3"></div>
+        </div>
+        <div id="seg_1_2" class="seg">
+            <div class="cell segrow_1 segcolumn_1" data-row="4" data-column="4"></div>
+            <div class="cell segrow_1 segcolumn_2" data-row="4" data-column="5"></div>
+            <div class="cell segrow_1 segcolumn_3" data-row="4" data-column="6"></div>
+            <div class="cell segrow_2 segcolumn_1" data-row="5" data-column="4"></div>
+            <div class="cell segrow_2 segcolumn_2" data-row="5" data-column="5"></div>
+            <div class="cell segrow_2 segcolumn_3" data-row="5" data-column="6"></div>
+            <div class="cell segrow_3 segcolumn_1" data-row="6" data-column="4"></div>
+            <div class="cell segrow_3 segcolumn_2" data-row="6" data-column="5"></div>
+            <div class="cell segrow_3 segcolumn_3" data-row="6" data-column="6"></div>
+        </div>
+        <div id="seg_1_3" class="seg">
+            <div class="cell segrow_1 segcolumn_1" data-row="4" data-column="7"></div>
+            <div class="cell segrow_1 segcolumn_2" data-row="4" data-column="8"></div>
+            <div class="cell segrow_1 segcolumn_3" data-row="4" data-column="9"></div>
+            <div class="cell segrow_2 segcolumn_1" data-row="5" data-column="7"></div>
+            <div class="cell segrow_2 segcolumn_2" data-row="5" data-column="8"></div>
+            <div class="cell segrow_2 segcolumn_3" data-row="5" data-column="9"></div>
+            <div class="cell segrow_3 segcolumn_1" data-row="6" data-column="7"></div>
+            <div class="cell segrow_3 segcolumn_2" data-row="6" data-column="8"></div>
+            <div class="cell segrow_3 segcolumn_3" data-row="6" data-column="9"></div>
+        </div>
+        <div id="seg_3_1" class="seg">
+            <div class="cell segrow_1 segcolumn_1" data-row="7" data-column="1"></div>
+            <div class="cell segrow_1 segcolumn_2" data-row="7" data-column="2"></div>
+            <div class="cell segrow_1 segcolumn_3" data-row="7" data-column="3"></div>
+            <div class="cell segrow_2 segcolumn_1" data-row="8" data-column="1"></div>
+            <div class="cell segrow_2 segcolumn_2" data-row="8" data-column="2"></div>
+            <div class="cell segrow_2 segcolumn_3" data-row="8" data-column="3"></div>
+            <div class="cell segrow_3 segcolumn_1" data-row="9" data-column="1"></div>
+            <div class="cell segrow_3 segcolumn_2" data-row="9" data-column="2"></div>
+            <div class="cell segrow_3 segcolumn_3" data-row="9" data-column="3"></div>
+        </div>
+        <div id="seg_1_2" class="seg">
+            <div class="cell segrow_1 segcolumn_1" data-row="7" data-column="4"></div>
+            <div class="cell segrow_1 segcolumn_2" data-row="7" data-column="5"></div>
+            <div class="cell segrow_1 segcolumn_3" data-row="7" data-column="6"></div>
+            <div class="cell segrow_2 segcolumn_1" data-row="8" data-column="4"></div>
+            <div class="cell segrow_2 segcolumn_2" data-row="8" data-column="5"></div>
+            <div class="cell segrow_2 segcolumn_3" data-row="8" data-column="6"></div>
+            <div class="cell segrow_3 segcolumn_1" data-row="9" data-column="4"></div>
+            <div class="cell segrow_3 segcolumn_2" data-row="9" data-column="5"></div>
+            <div class="cell segrow_3 segcolumn_3" data-row="9" data-column="6"></div>
+        </div>
+        <div id="seg_1_3" class="seg">
+            <div class="cell segrow_1 segcolumn_1" data-row="7" data-column="7"></div>
+            <div class="cell segrow_1 segcolumn_2" data-row="7" data-column="8"></div>
+            <div class="cell segrow_1 segcolumn_3" data-row="7" data-column="9"></div>
+            <div class="cell segrow_2 segcolumn_1" data-row="8" data-column="7"></div>
+            <div class="cell segrow_2 segcolumn_2" data-row="8" data-column="8"></div>
+            <div class="cell segrow_2 segcolumn_3" data-row="8" data-column="9"></div>
+            <div class="cell segrow_3 segcolumn_1" data-row="9" data-column="7"></div>
+            <div class="cell segrow_3 segcolumn_2" data-row="9" data-column="8"></div>
+            <div class="cell segrow_3 segcolumn_3" data-row="9" data-column="9"></div>
+        </div>
+
+    <div id ="inputSelectorPanel">
+        <div class ="inputSelectorItem">1</div>
+        <div class ="inputSelectorItem">2</div>
+        <div class ="inputSelectorItem">3</div>
+        <div class ="inputSelectorItem">4</div>
+        <div class ="inputSelectorItem">5</div>
+        <div class ="inputSelectorItem">6</div>
+        <div class ="inputSelectorItem">7</div>
+        <div class ="inputSelectorItem">8</div>
+        <div class ="inputSelectorItem">9</div>
+    </div>
+</div>
+</body>
+
+</html>
