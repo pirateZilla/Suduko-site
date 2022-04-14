@@ -1,5 +1,6 @@
 //get board from API
 function getnewboard() {
+    console.log("getting new board")
     boards = null
     const settings = {
         "async": false,
@@ -65,6 +66,7 @@ $(function () {
     })
     $("#newGameButton").click(function () { newGame() })
     function populateBoard(board, static) {
+        console.log("Populating Board")
         for (const [row_i, row] of board.entries()) {
             for (const [column_j, value] of row.entries()) {
 
@@ -83,30 +85,39 @@ $(function () {
 
     }
     function clearBoard() {
+        console.log("Clearing Board")
         for (var i = 0; i < 9; i++) {
             for (var j = 0; j < 9; j++) {
                 cellSelector = ".cell[data-row='" + (i + 1) + "'][data-column='" + (j + 1) + "']"
                 $(cellSelector).html("")
+                if ($(cellSelector).hasClass("static")) {
+                    $(cellSelector).removeClass("static")
+                }
             }
         }
     }
     function saveBoards() {
+        console.log("Saving Boards")
         localStorage.setItem("boards", JSON.stringify(boards))
     }
     //setup board
     function setupBoards() {
+        console.log("setupBoards")
         boards = JSON.parse(localStorage.getItem("boards"))
         if (!boards) {
             boards = getnewboard()
+            saveBoards()
         }
         populateBoard(boards["unsolved-sudoku"], true)
         populateBoard(boards["inputboard"], false)
-        saveBoards()
+
     }
     function newGame() {
+        console.log("newgame")
         localStorage.removeItem("boards")
         clearBoard()
         setupBoards()
+        highlightSelected()
     }
     setupBoards()
     // for (const [row_i, row] of boards["unsolved-sudoku"].entries()) {
