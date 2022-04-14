@@ -63,37 +63,52 @@ $(function () {
         highlightSelected()
         saveBoards()
     })
-    function populateBoard(board,static){
+    $("#newGameButton").click(function () { newGame() })
+    function populateBoard(board, static) {
         for (const [row_i, row] of board.entries()) {
             for (const [column_j, value] of row.entries()) {
-    
+
                 cellSelector = ".cell[data-row='" + (row_i + 1) + "'][data-column='" + (column_j + 1) + "']"
                 cell = $(cellSelector)
-                if (value != 0 && value!= null) {
-    
+                if (value != 0 && value != null) {
+
                     cell.html(value)
-                    if(static){
+                    if (static) {
                         cell.addClass("static")
                     }
                 }
             }
-    
+
         }
 
     }
-    function saveBoards(){
-        localStorage.setItem("boards",JSON.stringify(boards))
+    function clearBoard() {
+        for (var i = 0; i < 9; i++) {
+            for (var j = 0; j < 9; j++) {
+                cellSelector = ".cell[data-row='" + (i + 1) + "'][data-column='" + (j + 1) + "']"
+                $(cellSelector).html("")
+            }
+        }
+    }
+    function saveBoards() {
+        localStorage.setItem("boards", JSON.stringify(boards))
     }
     //setup board
-    function setupBoards(){
+    function setupBoards() {
         boards = JSON.parse(localStorage.getItem("boards"))
-        if (!boards){
+        if (!boards) {
             boards = getnewboard()
         }
-        populateBoard(boards["unsolved-sudoku"],true)
-        populateBoard(boards["inputboard"],false)
-}
-setupBoards()
+        populateBoard(boards["unsolved-sudoku"], true)
+        populateBoard(boards["inputboard"], false)
+        saveBoards()
+    }
+    function newGame() {
+        localStorage.removeItem("boards")
+        clearBoard()
+        setupBoards()
+    }
+    setupBoards()
     // for (const [row_i, row] of boards["unsolved-sudoku"].entries()) {
     //     for (const [column_j, value] of row.entries()) {
 

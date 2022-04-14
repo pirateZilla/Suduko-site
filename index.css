@@ -14,6 +14,9 @@
 
 body{
     background-color: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 3vh;;
+    
 }
 #gameBoard {
 
@@ -25,7 +28,7 @@ body{
     grid-template-columns: repeat(9,1fr);
     grid-template-rows: repeat(10,1fr);
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 3vh;;
+
     max-width: 90vw;
     box-sizing: border-box;
 }
@@ -49,6 +52,7 @@ body{
     /* font-size: 2em; */
     overflow: auto;
     color: var(--color-pencil)
+
 }
 .static{
     color: var(--color-secondary);
@@ -74,4 +78,12 @@ body{
     margin: 5%;
     border-radius: 5%;
     
+}
+#newGameButton{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column; 
 }
